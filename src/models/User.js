@@ -10,12 +10,14 @@ const User = dbConnection.define("User", {
   },
   email: {
     type: DataTypes.STRING(50),
+    unique: true,
   },
   password: {
     type: DataTypes.STRING(64),
   },
   role: {
     type: DataTypes.STRING(10),
+    defaultValue: "user",
   },
 });
 
