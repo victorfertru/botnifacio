@@ -1,15 +1,25 @@
 const Command = require("../models/Command");
+const { Op } = require("sequelize");
 
 exports.findAllCommands = async () => {
-  return await Command.findAndCountAll();
+  return await Command.findAndCountAll({
+    order: [
+      ["command", "ASC"],
+      ["arg", "ASC"],
+    ],
+  });
 };
 
 exports.findCommandById = async (id) => {
   return await Command.findByPk(id);
 };
 
-exports.findCommandByName = async (name) => {
-  return await Command.findOne({ where: { name } });
+exports.findCommandByName = async (command) => {
+  return await Command.findOne({ where: { command, arg: { [Op.is]: null } } });
+};
+
+exports.findCommandByNameWithArg = async (command, arg) => {
+  return await Command.findOne({ where: { command, arg } });
 };
 
 exports.insertCommand = async (command) => {

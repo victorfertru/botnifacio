@@ -16,6 +16,29 @@ exports.getCommandById = async (id) => {
   return command.toJSON();
 };
 
+exports.getCommandByName = async (command) => {
+  if (!command) throw new HttpError(400, "You must provide command");
+
+  const commandFound = await commandRepository.findCommandByName(command);
+  return commandFound.toJSON();
+};
+
+exports.getCommandByNameWithArg = async (command, arg) => {
+  if (!command || !arg)
+    throw new HttpError(400, "You must provide command && arg");
+
+  const commandFound = await commandRepository.findCommandByNameWithArg(
+    command,
+    arg
+  );
+  const resul = commandFound
+    ? commandFound
+    : {
+        message: `Command [!${command} ${arg}] not exist yet. Please, contact with admins`,
+      };
+  return resul;
+};
+
 exports.createCommand = async (command) => {
   await insertCommandSchema.validateAsync(command);
 

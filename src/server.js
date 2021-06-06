@@ -5,6 +5,9 @@ const loadModels = require("./models/relationship");
 const errorHandler = require("./middlewares/errorHandler");
 const tokenValidation = require("./middlewares/tokenValidation");
 
+// @discord Bot
+const botnifacio = require("./config/botnifacio");
+
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const commandsRouter = require("./routes/commands");
