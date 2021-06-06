@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const dbConnection = require("../config/db");
+const { ROLE } = require("../utils/constants");
 
 const User = dbConnection.define("User", {
   id: {
@@ -10,14 +11,15 @@ const User = dbConnection.define("User", {
   },
   email: {
     type: DataTypes.STRING(50),
-    unique: true,
+    unique: "email",
   },
   password: {
     type: DataTypes.STRING(64),
   },
   role: {
     type: DataTypes.STRING(10),
-    defaultValue: "user",
+    type: DataTypes.ENUM([ROLE.ADMIN, ROLE.USER]),
+    defaultValue: ROLE.USER,
   },
 });
 

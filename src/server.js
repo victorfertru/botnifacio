@@ -7,6 +7,7 @@ const tokenValidation = require("./middlewares/tokenValidation");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const commandsRouter = require("./routes/commands");
 
 const PORT = process.env.PORT || 8080;
 
@@ -22,6 +23,7 @@ server.use(express.static(path.join(__dirname, "public")));
 // @Routes
 server.use("/", indexRouter);
 server.use("/users", usersRouter);
+server.use("/commands", commandsRouter);
 
 server.listen(PORT, () => console.log(`Everything is fine! in PORT: ${PORT}`));
 

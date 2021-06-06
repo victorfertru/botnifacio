@@ -22,7 +22,11 @@ exports.login = async (email, password) => {
   if (user.password !== encryptedPassword)
     throw new HttpError(400, "Wrong password");
 
-  const token = signToken({ id: user.id, email: user.email, role: user.role });
+  const token = await signToken({
+    id: user.id,
+    email: user.email,
+    role: user.role,
+  });
 
   return token;
 };

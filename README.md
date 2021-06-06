@@ -45,9 +45,9 @@ Se han definido dos entidades en el proyecto: `User` y `Command`.
 1.  `Command` se utilizará para la creación de los comandos/mensajes que tendrá _BOTnifacio_ como respuesta a la interacción con los usuarios.
     Además, se podrán editar y eliminar:
     - **id**: generada con un UUID v4.
-    - **command**: campo único con un límite de 50 caracteres.
-    - **arg**: se almacenará la password **_encriptada_**.
-    - **message**: únicamente se podrán introducir los valores de _admin_
+    - **command**: límite de 12 caracteres.
+    - **arg**: límite de 20 caracteres.
+    - **message**: límite provisional de 500 caracteres
 
 ## 4. Características implementadas
 

@@ -1,5 +1,6 @@
 const dbConnection = require("../config/db");
 const User = require("./User");
+const Command = require("./Command");
 
 const loadModels = () => {
   dbConnection
