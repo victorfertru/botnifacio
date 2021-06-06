@@ -30,23 +30,23 @@ router.post("/", roleValidation(), async (req, res, next) => {
   }
 });
 
-// router.put("/", roleValidation(), async (req, res, next) => {
-//   try {
-//     await commandService.editPost(req.user, req.body);
-//     res.sendStatus(204);
-//   } catch (error) {
-//     next(error);
-//   }
-// });
+router.put("/", roleValidation(), async (req, res, next) => {
+  try {
+    await commandService.editCommand(req.body);
+    res.sendStatus(204);
+  } catch (error) {
+    next(error);
+  }
+});
 
-// router.delete("/:id", roleValidation(), async (req, res, next) => {
-//   try {
-//     const { id } = req.params;
-//     await commandService.removePost(req.user, id);
-//     res.sendStatus(204);
-//   } catch (error) {
-//     next(error);
-//   }
-// });
+router.delete("/:id", roleValidation(), async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    await commandService.removeCommand(id);
+    res.sendStatus(204);
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = router;
