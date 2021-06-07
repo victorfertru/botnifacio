@@ -17,7 +17,6 @@ router.post("/login", async (req, res, next) => {
     const user = await userService.login(email, password);
     res.status(200).json(user);
   } catch (error) {
-    // res.status(error.statusCode).json({ message: error.message });
     next(error);
   }
 });

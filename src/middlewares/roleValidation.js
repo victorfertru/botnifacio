@@ -1,3 +1,4 @@
+const { ROLE } = require("../utils/constants");
 const HttpError = require("../utils/httpError");
 
 const roleValidation = (role) => {
@@ -6,7 +7,8 @@ const roleValidation = (role) => {
     roles = Array.isArray(role) ? role : [role];
   }
   return (req, res, next) => {
-    if (![...roles, "admin"].includes(req.user?.role)) throw new HttpError(401);
+    if (![...roles, ROLE.ADMIN].includes(req.user?.role))
+      throw new HttpError(401);
     next();
   };
 };

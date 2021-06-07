@@ -11,6 +11,7 @@ const botnifacio = require("./config/botnifacio");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const commandsRouter = require("./routes/commands");
+const { DB_MSG } = require("./utils/constants");
 
 const PORT = process.env.PORT || 8080;
 
@@ -28,7 +29,7 @@ server.use("/", indexRouter);
 server.use("/users", usersRouter);
 server.use("/commands", commandsRouter);
 
-server.listen(PORT, () => console.log(`Everything is fine! in PORT: ${PORT}`));
+server.listen(PORT, () => console.log(DB_MSG.ALL_RIGHT + PORT));
 
 server.use(errorHandler);
 
