@@ -100,9 +100,9 @@ Se han definido dos entidades en el proyecto: `User` y `Command`.
 
 El nombre de las variables de entorno necesarias se incluyen en el fichero `.env-template`.
 
-Tendrás que crear un fichero `.env` en la carpeta raíz del proyecto y configurar las variables indicadas en el fichero _.env-template_.
+**Tendrás que crear un fichero `.env`** en la carpeta raíz del proyecto y configurar las variables indicadas en el fichero _.env-template_.
 
-Además de estos datos, tendrás que realizar las siguientes acciones para crear el bot **Y OBTENER EL TOKEN**:
+Además de configurar estos datos, tendrás que realizar las siguientes acciones para crear el bot **Y OBTENER EL TOKEN**:
 
 1. Tener cuenta y estar logueado en la web oficial de _**Discord**_.
 1. Dirigirte a la página de _aplicación_ https://discord.com/developers/applications
