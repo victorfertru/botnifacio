@@ -29,6 +29,7 @@ exports.ERRORS = Object.freeze({
   INVALID_DATA: "Invalid data provided",
   USER_NOT_FOUND: "User not found",
   CMD_EXISTS: "Command already exists",
+  USER_EXISTS: "User email already exists",
 });
 
 exports.IS_CODE = Object.freeze({

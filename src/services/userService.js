@@ -6,6 +6,9 @@ const HttpError = require("../utils/httpError");
 const { ERRORS } = require("../utils/constants");
 
 exports.signup = async (user) => {
+  const userFound = await userRepository.findUserByEmail(user.email);
+
+  if (userFound) throw new HttpError(400, ERRORS.USER_EXISTS);
   const validationData = await insertUserSchema.validateAsync(user);
 
   validationData.password = await encryptPassword(validationData.password);
