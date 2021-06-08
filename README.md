@@ -1,6 +1,6 @@
 ![Logo BOTnifacio](https://res.cloudinary.com/h3rmenegild0/image/upload/v1623144315/poseidon/botnifacio_hnyqjp.png)
 
-## 1. ¿Qué es BOTnifacio? 🤖
+## 1. 💭¿Qué es BOTnifacio? 🤖
 
 - Es un proyecto de **_bot_ para Discord** que funciona sobre un servidor express creado como práctica para las clases de Node.js.
 
@@ -26,7 +26,7 @@
 
 ---
 
-## 2. Librerías instaladas:
+## 2. 📚 Librerías instaladas:
 
 - express
 - sequelize
@@ -39,7 +39,7 @@
 
 ---
 
-## 3. Entidades:
+## 3. 🌟 Entidades:
 
 Se han definido dos entidades en el proyecto: `User` y `Command`.
 
@@ -70,7 +70,7 @@ Se han definido dos entidades en el proyecto: `User` y `Command`.
 
 ---
 
-## 4. Características implementadas
+## 4. 🎁 Características implementadas
 
 - `Encrypt password`: Utilizando la librería _**crypto**_ y un _**SALT**_ se encriptan las contraseñas de los usuarios para añadir un extra de seguridad.
 - `Role validation`: Permitiendo el acceso a distintas secciones según el role que tenga el usuario.
@@ -80,19 +80,21 @@ Se han definido dos entidades en el proyecto: `User` y `Command`.
 
 ---
 
-## 5. ¿Cómo utilizo BOTnifacio 🤖?
+## 5. 💻 ¿Cómo utilizo BOTnifacio 🤖?
 
-Cuando hayas clonado el repositorio, el primer paso será instalar las dependencias necesarias.
+1. Clonar el repositorio.
 
-Para ello, debes ejecutar la siguiente línea:
+   `git clone https://github.com/victorfertru/botnifacio.git`
 
-`npm i`
+1. Instalar las librerías necesarias:
 
-Posteriormente, utiliza el script `start` para iniciar el proyecto:
+   `npm i`
 
-`npm start`
+1. Por último, utiliza el script `start` para iniciar el proyecto:
 
-## 6. ¿Necesito configurar algún dato o variable para que funcione?
+   `npm start`
+
+## 6. ⚙ ¿Necesito configurar algún dato o variable para que funcione?
 
 #### **Sí**. El proyecto necesita utilizar algunas variables de entorno para su correcto funcionamiento.
 
@@ -102,21 +104,24 @@ Tendrás que crear un fichero `.env` en la carpeta raíz del proyecto y configur
 
 Además de estos datos, tendrás que realizar las siguientes acciones para crear el bot **Y OBTENER EL TOKEN**:
 
-1. Estar logueado en la web de Discord.
+1. Tener cuenta y estar logueado en la web oficial de _**Discord**_.
 1. Dirigirte a la página de _aplicación_ https://discord.com/developers/applications
 1. Click en el botón "New Application"
-1. Dar un nombre y pulsar "_Create_"
+1. Dale un nombre y pulsar "_Create_"
 1. Ir a la pestaña "_Bot_" y pulsar "_Add Bot_". Deberás confirmar haciendo clic en "_Yes, do it!_"
 
    Deja la configuración por defecto en _Public Bot_ (checked) y _Require OAuth2 Code Grant_ (unchecked)
 
-1. Copia el Token y **NO lo compartas con nadie**.
+1. Copia el Token y **NO lo compartas con nadie**. `Tendrás que pegarlo en el fichero .env`
 
 1. #### Invitar a tu bot a unirse al servidor:
 
    1. Ve a la pestaña "_OAuth2_" y selecciona _**bot**_ en la sección _scopes_
    1. Ahora, establece los permisos para tu bot, por ejemplo:
-      ![Logo BOTnifacio](https://www.freecodecamp.org/news/content/images/size/w1600/2020/11/image-124.png)
+      ![Logo BOTnifacio](https://discordpy.readthedocs.io/en/latest/_images/discord_oauth2_perms.png)
+
+      - Ten cuidado si asignas permisos de "_Administrator_" al bot.
+
    1. Una vez finalices de seleccionar los permisos:
 
       1- **COPIA** el enlace que aparece en la parte superior
@@ -124,3 +129,5 @@ Además de estos datos, tendrás que realizar las siguientes acciones para crear
       2- Pégalo en la barra de direcciones de tu navegador
 
       3- Selecciona a qué servidor quieres invitar al bot y haz click en "_Authorize_"
+
+      `Importante: Tu cuenta debe tener permisos para administrar el servidor.`
