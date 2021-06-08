@@ -1,8 +1,8 @@
-# BOTnifacio
+![Logo BOTnifacio](https://res.cloudinary.com/h3rmenegild0/image/upload/v1623144315/poseidon/botnifacio_hnyqjp.png)
 
-## 1. ¿Qué es BOTnifacio?
+## 1. ¿Qué es BOTnifacio? 🤖
 
-- Es un proyecto de **_bot_ para Discord** que funciona sobre un servidor express en NodeJS.
+- Es un proyecto de **_bot_ para Discord** que funciona sobre un servidor express creado como práctica para las clases de Node.js.
 
   _**BOTnifacio**_ se encargará de facilitar a los usuarios un ejemplo de la etiqueta HTML que éstos soliciten, por ejemplo:
   `!html a`
@@ -63,9 +63,9 @@ Se han definido dos entidades en el proyecto: `User` y `Command`.
 
 - #### Para los comandos, existirán las siguientes rutas:
   - GET `/all` para mostrar todos los comandos registrados.
-  - GET `/:id` para mostrar un comando buscando por su _id_.
+  - GET `/:id` para mostrar un comando buscando por su _id_. Ésta debe indicarse en la URL
   - POST `/` para la creación de nuevos comandos.
-  - PUT `/` para modificar los comandos, utilizando su _id_, (debe incluirse en _req.body_ )
+  - PUT `/` para modificar los comandos, utilizando su _id_. Ésta debe incluirse en _req.body_
   - DELETE`/` para eliminar comandos indicando su _id_
 
 ---
@@ -79,3 +79,23 @@ Se han definido dos entidades en el proyecto: `User` y `Command`.
 - `Token validation`: Generación y validación del token de autorización.
 
 ---
+
+# 5. ¿Cómo utilizo BOTnifacio?
+
+Cuando hayas clonado el repositorio, el primer paso será instalar las dependencias necesarias.
+
+Para ello, debes ejecutar la siguiente línea:
+
+`npm i`
+
+Posteriormente, utiliza el script `start` para iniciar el proyecto:
+
+`npm start`
+
+# 6. ¿Necesito configurar algún dato o variable para que funcione?
+
+#### **Sí**. El proyecto necesita utilizar algunas variables de entorno para su correcto funcionamiento.
+
+El nombre de las variables de entorno necesarias se incluyen en el fichero `.env-template`.
+
+Tendrás que crear un fichero `.env` en la carpeta raíz del proyecto y configurar las variables indicadas en el fichero _.env-template_.

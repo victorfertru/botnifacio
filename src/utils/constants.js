@@ -15,7 +15,7 @@ exports.DB_MSG = Object.freeze({
 });
 exports.BOT_MSG = Object.freeze({
   PREFIX: "!",
-  HELP: "I would like to show you examples of how to use the different HTML tags. You can see which ones by typing `!showcommands`",
+  HELP: "I would like to show you examples of how to use some HTML tags.\nYou can see which ones by typing `!showcommands`",
 });
 
 exports.ERRORS = Object.freeze({
@@ -33,5 +33,5 @@ exports.ERRORS = Object.freeze({
 
 exports.IS_CODE = Object.freeze({
   html: true,
-  hola: true,
+  js: true,
 });
