@@ -22,8 +22,6 @@ loadModels();
 server.use(express.json());
 server.use(tokenValidation);
 
-server.use(express.static(path.join(__dirname, "public")));
-
 // @Routes
 server.use("/", indexRouter);
 server.use("/users", usersRouter);
