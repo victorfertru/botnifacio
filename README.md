@@ -4,16 +4,16 @@
 
 - Es un proyecto de **_bot_ para Discord** que funciona sobre un servidor express creado como práctica para las clases de Node.js.
 
-  _**BOTnifacio**_ se encargará de facilitar a los usuarios un ejemplo de la etiqueta HTML que éstos soliciten, por ejemplo:
+  _**BOTnifacio**_ 🤖 se encargará de facilitar a los usuarios un ejemplo de la etiqueta HTML que éstos soliciten, por ejemplo:
   `!html a`
 
-  Siendo `!` el prefijo para lanzar el comando, `html` el comando y `a` el argumento, es decir, la etiqueta de la que queremos ver un ejemplo, teniendo un resultado similar al siguiente ejemplo:
+  Siendo `!` el prefijo configurado por defecto para lanzar el comando, `html` el comando y `a` el argumento, es decir, la etiqueta de la que queremos ver un ejemplo, teniendo un resultado similar al siguiente ejemplo:
 
   ```
   <a href='http://www.destiny-link.com' target='_parent' title='Destiny title'>Destiny title</a>
   ```
 
-- La funcionalidad principal del proyecto se centra en crear la estructura que permitirá añadir, editar y eliminar de la BBDD los comandos que tendrán disponibles los usuarios para interactuar con **_BOTnifacio_**.
+- La funcionalidad principal del proyecto se centra en crear la estructura que permitirá añadir, editar y eliminar de la BBDD los comandos que tendrán disponibles los usuarios para interactuar con **_BOTnifacio_** 🤖.
 
   Estas acciones las podrán realizar únicamente los usuarios que posean el role de _admin_.
 
@@ -22,7 +22,7 @@
   - Modelos
   - Repositorios
   - Servicios
-  - Rutas.
+  - Rutas
 
 ---
 
@@ -43,9 +43,9 @@
 
 Se han definido dos entidades en el proyecto: `User` y `Command`.
 
-1.  `User` permitirá el registro y login de usuarios, solicitando únicamente la información necesaria:
+1.  `User` permitirá el registro y login de usuarios, solicitando únicamente los datos necesarios para poder realizar el login:
 
-    - **id**: generada con un UUID v4.
+    - **id**: generada automáticamente con un UUID v4.
     - **email**: campo único con un límite de 50 caracteres.
     - **password**: se almacenará la password **_encriptada_**.
     - **role**: únicamente se podrán introducir los valores de _admin_ y _user_, siendo este último el valor por defecto.
@@ -54,7 +54,7 @@ Se han definido dos entidades en el proyecto: `User` y `Command`.
   - `/signup` para la creación de la cuenta.
   - `/login` para conectarse a la cuenta y poder realizar acciones.
 
-2.  `Command` se utilizará para la creación de los comandos/mensajes que tendrá _BOTnifacio_ como respuesta a la interacción con los usuarios.
+2.  `Command` se utilizará para la creación de los comandos/mensajes que tendrá _BOTnifacio_ 🤖 como respuesta a la interacción con los usuarios.
     Además, se podrán editar y eliminar:
     - **id**: generada con un UUID v4.
     - **command**: límite de 12 caracteres.
@@ -80,7 +80,7 @@ Se han definido dos entidades en el proyecto: `User` y `Command`.
 
 ---
 
-# 5. ¿Cómo utilizo BOTnifacio?
+## 5. ¿Cómo utilizo BOTnifacio 🤖?
 
 Cuando hayas clonado el repositorio, el primer paso será instalar las dependencias necesarias.
 
@@ -92,10 +92,35 @@ Posteriormente, utiliza el script `start` para iniciar el proyecto:
 
 `npm start`
 
-# 6. ¿Necesito configurar algún dato o variable para que funcione?
+## 6. ¿Necesito configurar algún dato o variable para que funcione?
 
 #### **Sí**. El proyecto necesita utilizar algunas variables de entorno para su correcto funcionamiento.
 
 El nombre de las variables de entorno necesarias se incluyen en el fichero `.env-template`.
 
 Tendrás que crear un fichero `.env` en la carpeta raíz del proyecto y configurar las variables indicadas en el fichero _.env-template_.
+
+Además de estos datos, tendrás que realizar las siguientes acciones para crear el bot **Y OBTENER EL TOKEN**:
+
+1. Estar logueado en la web de Discord.
+1. Dirigirte a la página de _aplicación_ https://discord.com/developers/applications
+1. Click en el botón "New Application"
+1. Dar un nombre y pulsar "_Create_"
+1. Ir a la pestaña "_Bot_" y pulsar "_Add Bot_". Deberás confirmar haciendo clic en "_Yes, do it!_"
+
+   Deja la configuración por defecto en _Public Bot_ (checked) y _Require OAuth2 Code Grant_ (unchecked)
+
+1. Copia el Token y **NO lo compartas con nadie**.
+
+1. #### Invitar a tu bot a unirse al servidor:
+
+   1. Ve a la pestaña "_OAuth2_" y selecciona _**bot**_ en la sección _scopes_
+   1. Ahora, establece los permisos para tu bot, por ejemplo:
+      ![Logo BOTnifacio](https://www.freecodecamp.org/news/content/images/size/w1600/2020/11/image-124.png)
+   1. Una vez finalices de seleccionar los permisos:
+
+      1- **COPIA** el enlace que aparece en la parte superior
+
+      2- Pégalo en la barra de direcciones de tu navegador
+
+      3- Selecciona a qué servidor quieres invitar al bot y haz click en "_Authorize_"
